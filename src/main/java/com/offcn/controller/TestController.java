@@ -1,6 +1,7 @@
 package com.offcn.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
@@ -17,5 +18,9 @@ public class TestController {
     @GetMapping("/get")
     public String getSession(HttpSession session){
         return (String)session.getAttribute("msg");
+    }
+    @RequestMapping("/hello")
+    public String hello(){
+        return "hello everyone!";
     }
 }
